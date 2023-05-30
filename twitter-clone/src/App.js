@@ -1,13 +1,22 @@
+
+import Login from './components/molecules/login/Login';
 import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+//import './App.css';
+
+import { BrowserRouter, Routes } from 'react-router-dom';
+
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<div className="App">App</div>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div >
+      <BrowserRouter>
+      <Login/>
+        <Routes>
+
+        </Routes>
+
+      </BrowserRouter>
+
+    </div>
   );
 }
 
