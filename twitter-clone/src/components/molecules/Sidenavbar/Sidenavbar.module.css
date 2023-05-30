@@ -64,6 +64,7 @@ body {
   gap: 1rem;
   padding: 0rem 1rem;
   padding-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .link-flex:hover {
@@ -86,4 +87,26 @@ body {
   height: 25px;
   width: 25px;
   border-radius: 50%;
+}
+
+@media screen and (max-width: 1227px) {
+  .links-flex {
+    width: 3rem;
+    display: flex;
+    justify-content: center;
+    transition: width 300ms ease-in-out;
+  }
+  .link-flex > p {
+    margin-bottom: 2rem;
+    display: none;
+  }
+  .link-flex > img {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 1230px) {
+  .links-flex {
+    width: 16rem;
+    transition: width 300ms ease-in-out;
+  }
 }

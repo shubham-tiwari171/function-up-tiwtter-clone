@@ -6,6 +6,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* <Route path="/" element={<div className="App"><Sidenavbar /></div>}></Route> */}
         <Route path="/" element={<div className="App"><Sidenavbar /></div>}></Route>
       </Routes>
     </BrowserRouter>
