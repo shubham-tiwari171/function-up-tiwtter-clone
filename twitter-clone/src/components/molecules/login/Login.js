@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import styles from './Login.module.css'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
 import { Link } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,22 +11,16 @@ export default function Login() {
     const email = 'bk'
     const password = 'bk@'
 
-    const [inputValue, setInputValue] = useState({
-        email: '',
-
-        password: ''
-
-    })
+    const [inputValue, setInputValue] = useState({ email: '', password: '' })
 
     function getData(e) {
         console.log(e.target.value)
         setInputValue(e.target.value)
-
     }
 
     function handleSubmit(e) {
         e.preventDefault();
-        
+
         const getUserArr = localStorage.getItem("userData")
         if (getUserArr && getUserArr.length) {
             const userData = JSON.parse(getUserArr);
@@ -49,7 +41,7 @@ export default function Login() {
     return (
         <div className={styles.Login}>
             <div className={styles.Logo}>
-                <img src='./twitter.png'/>
+                <img src='./twitter.png' />
                 <h2>Sign in to Twitter</h2>
                 <button>
                     <img src='./google.png' />
