@@ -14,21 +14,4 @@ function App() {
     </BrowserRouter>
   )
 }
-
-
-
-// function App() {
-//   return (
-//     <div>
-//       <SignUp />
-//       <BrowserRouter>
-//         <Routes>
-//           <Route path="/" element={<div className="App">App</div>}></Route>
-
-//         </Routes>
-//       </BrowserRouter>
-//     </div>
-//   );
-// }
-
 export default App;
