@@ -64,22 +64,23 @@ body {
   gap: 1rem;
   padding: 0rem 1rem;
   padding-right: 2rem;
-  margin-bottom: 1rem;
+  /* margin-bottom: 0.8rem; */
 }
 
 .link-flex:hover {
-  background-color: #bdc3cf;
+  background-color: #e3e7f0;
   border-radius: 2rem;
 }
 
 .link-icon {
   width: 1.8rem;
   height: 1.8rem;
+  font-weight: 100;
 }
 
 .link-text {
   font-size: 1.3rem;
-  font-weight: 600;
+  font-weight: 530;
   margin: 1rem 0rem;
 }
 
@@ -88,7 +89,8 @@ body {
   width: 25px;
   border-radius: 50%;
 }
-button {
+
+.tweet-button {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -102,6 +104,60 @@ button {
   background-color: #1f9bf0;
   color: #fff;
   text-align: center;
+  margin-top: 1rem;
+  width: 85%;
+}
+.account-login-data {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border: 1px solid white;
+  border-radius: 30px;
+  color: black;
+  text-align: center;
+  margin-top: 1rem;
+  width: 95%;
+}
+.account-login-data:hover {
+  background-color: #e3e7f0;
+}
+
+.tweet-button:hover {
+  background-color: #107dc5;
+  transition: background-color 200ms ease-in-out;
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.8rem;
+}
+
+.circleDiv {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-right: 1.3rem;
+  border-radius: 50%;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.circleDiv > img {
+  height: 2.1rem;
+  width: 2.1rem;
+}
+
+.centerDiv {
+  flex-grow: 1;
+  flex-basis: 0;
+  margin-right: 1.3rem;
+  width: 50px;
 }
 
 @media screen and (max-width: 1227px) {
@@ -111,16 +167,13 @@ button {
     justify-content: center;
     transition: width 300ms ease-in-out;
   }
+  .link-flex {
+    margin-bottom: 0.8rem;
+  }
   .link-flex > p {
     /* margin-bottom: 2rem; */
     display: none;
   }
-  /* .link-icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.5rem;
-  } */
 
   .blue-logo {
     padding: 0.8rem;
@@ -130,7 +183,18 @@ button {
   .blue-logo:hover {
     background-color: var(--hover-light-grey);
   }
+  .tweet-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin-left: 0.5rem;
+    margin-bottom: 0rem;
+  }
 }
+
 @media screen and (min-width: 1230px) {
   .links-flex {
     width: 16rem;
