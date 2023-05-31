@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { TextField } from "@mui/material";
 import style from "./SignUp.module.css";
 import InputLabel from "@mui/material/InputLabel";
@@ -20,29 +21,42 @@ const SignUp = () => {
   const [year, setYear] = useState("");
   const [day, setDay] = useState("");
   const [open, setOpen] = useState(false);
-  const [close,setClose] =useState(false)
+  const [close, setClose] = useState(false);
+  const [dobError, setDobError] = useState("");
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     modalOpen();
-    
-  },[close]);
+  }, [close]);
+
   const modalOpen = () => {
     setOpen(true);
   };
-  const handleClose = () =>{
-    setOpen(false)
-  }
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const getName = (e) => {
     setName(e.target.value);
+    if (nameError) {
+      setNameError("");
+    }
   };
 
   const getPhone = (e) => {
     setPhone(e.target.value);
+    if (phoneError) {
+      setPhoneError("");
+    }
   };
 
   const getEmail = (e) => {
     setEmail(e.target.value);
+    if (emailError) {
+      setEmailError("");
+    }
   };
 
   const getMonth = (event) => {
@@ -54,7 +68,6 @@ const SignUp = () => {
   const getDay = (e) => {
     setDay(e.target.value);
   };
-  
 
   const getUserData = (e) => {
     e.preventDefault();
@@ -68,14 +81,30 @@ const SignUp = () => {
       setPhoneError("Please Enter Valid Phone");
     } else if (!emailRegex.test(email)) {
       setEmailError("Please Enter Valid Email");
+    } else if (month === "" || day === "" || year === "") {
+      setDobError("Please select a valid date of birth");
     } else {
-      const dateOfBirth = new Date(year, month - 1, day);
-      const userData = { name, phone, email, dob: dateOfBirth.toISOString() };
+      const dateOfBirth = { year, month, day };
+      const storedUserData = localStorage.getItem("userData");
+      let userData = [];
+
+      if (storedUserData) {
+        userData = JSON.parse(storedUserData);
+      }
+
+      userData.push({ name, phone, email, dob: dateOfBirth });
       localStorage.setItem("userData", JSON.stringify(userData));
+
+      console.log(userData);
+
       setName("");
       setPhone("");
       setEmail("");
       setDob("");
+      setMonth("");
+      setYear("");
+      setDay("");
+      navigate("/");
     }
   };
 
@@ -88,11 +117,10 @@ const SignUp = () => {
     >
       <div className={style.Container}>
         <span>
-          
-          <BsXLg className={style.crossIcon} onClick={handleClose}/>
+          <BsXLg className={style.crossIcon} onClick={handleClose} />
           <span className={style.wrapperCrossIcon}>Step 1 of 5</span>
         </span>
-        <form action="" className={style.wrapper} onSubmit={getUserData}>
+        <form action="" className={style.wrapper}>
           <h2 className={style.heading}>Create your account</h2>
 
           <TextField
@@ -103,9 +131,11 @@ const SignUp = () => {
             value={name}
             onChange={getName}
             size="medium"
-             sx={{width:'25rem'}}
+            sx={{ width: "25rem" }}
           />
-          {nameError && <span className={style.error}>{nameError}</span>}
+          {nameError && name && (
+            <span className={style.error}>{nameError}</span>
+          )}
 
           <br />
 
@@ -119,7 +149,9 @@ const SignUp = () => {
             size="medium"
             sx={{ width: "25rem" }}
           />
-          {phoneError && <span className={style.error}>{phoneError}</span>}
+          {phoneError && phone && (
+            <span className={style.error}>{phoneError}</span>
+          )}
 
           <br />
 
@@ -132,15 +164,17 @@ const SignUp = () => {
             onChange={getEmail}
             sx={{ width: "25rem" }}
           />
-          {emailError && <span className={style.error}>{emailError}</span>}
+          {emailError && email && (
+            <span className={style.error}>{emailError}</span>
+          )}
 
           <br />
           <h6 className={style.headingDob}>Date of Birth</h6>
           <div className={style.text}>
-          This will not be shown publicly. Confirm your own age, even if this
-          account is for a business, a pet, or something else.
-        </div>
-          
+            This will not be shown publicly. Confirm your own age, even if this
+            account is for a business, a pet, or something else.
+          </div>
+
           <div className={style.container}>
             <FormControl>
               <InputLabel>Month</InputLabel>
@@ -186,10 +220,19 @@ const SignUp = () => {
                   </MenuItem>
                 ))}
               </Select>
-                
             </FormControl>
           </div>
-          <button className={style.nextBtn}>Next</button>
+          <button
+            className={`${style.nextBtn} ${
+              !name || !phone || !email || !month || !day || !year
+                ? ""
+                : style.enabled
+            }`}
+            onClick={getUserData}
+            disabled={!name || !phone || !email || !month || !day || !year}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </Modal>

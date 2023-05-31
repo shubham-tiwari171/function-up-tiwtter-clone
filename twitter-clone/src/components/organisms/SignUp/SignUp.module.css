@@ -25,7 +25,6 @@
     width: 85%;
     margin-left: 1rem;
     text-align: center;
-    /* margin: auto; */
     font-size: 0.9rem;
     border: none;
     border-radius: 2rem;
@@ -52,6 +51,10 @@
     margin-top: -1rem;
   
   }
+  .dobError{
+    color: red;
+    font-size: 0.8rem;
+  }
   .Container {
     height: 87vh;
     width: 87vw;
@@ -63,8 +66,10 @@
     background-color: #fff;
     border: none;
     padding: 1rem;
+    color: black;
+    border-radius: 1rem;
   }
-  .nextBtn:hover {
+  .enabled:hover {
     background-color: rgb(39, 44, 48);
   }
   .crossIcon {
@@ -86,6 +91,7 @@
       border: none;
       padding: 1rem;
       position: relative;
+      color: black;
     }
     .nextBtn{
       position:absolute;
