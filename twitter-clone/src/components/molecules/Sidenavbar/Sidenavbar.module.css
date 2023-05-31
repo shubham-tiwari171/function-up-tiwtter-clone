@@ -9,19 +9,19 @@
   --hover-light-grey: #d6ddec;
 }
 
-body {
-  /* background-color: var(--black); */
+/* body {
+ 
   color: var(--white);
   margin: 0;
   font-family: "Chirp", sans-serif;
   overflow-x: hidden;
   display: flex;
-}
+} */
 
 /* Left Sidebar */
 
 .left-sidebar {
-  margin-top: 0.4rem;
+  /* margin-top: 0.4rem; */
   position: sticky;
   height: 100vh;
   left: 0;
