@@ -1,5 +1,5 @@
 import { ReactComponent as FeatherIcon } from "../../../../src/feather.svg";
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styles from "./Sidenavbar.module.css";
 import {
   MdOutlineSettings,
@@ -11,12 +11,13 @@ import {
   MdHome,
 } from "react-icons/md";
 const Sidenavbar = () => {
-  const [isVisible,setIsVisible]=useState(false)
+  const [isVisible, setIsVisible] = useState(false);
+  const myStyle = { visibility: isVisible ? "visible" : "hidden" };
+
   function handleClick() {
-    setIsVisible(true)
-    return
+    setIsVisible(!isVisible);
   }
-  
+
   return (
     <>
       <div className={`${styles["left-sidebar"]}`}>
@@ -85,7 +86,6 @@ const Sidenavbar = () => {
           </div>
 
           <div className={`${styles["tweet-button"]}`}>
-            
             <div className={styles.ficon} style={{ margin: "auto" }}>
               <FeatherIcon
                 className={styles.featherIcon}
@@ -94,21 +94,16 @@ const Sidenavbar = () => {
               />
               <span className={styles["button-text"]}>Tweet</span>
             </div>
-   
           </div>
 
           {/* Account  */}
 
-          {isVisible ?(
-            <div className={styles['add-dlt-account']} style={{visibility:"visible"}}>
-            <div>add an exisiting account</div>
-            <div>logout @johndoe123 </div>
-
-          </div>):(<div className={styles['add-dlt-account']} style={{visibility:"hidden"}}>
-            <div>add an exisiting account</div>
-            <div>logout @johndoe123 </div>
-
-          </div>)}
+          <div className={styles["add-dlt-account"]} style={myStyle}>
+            <div className={styles["add-account"]}>
+              add an exisiting account
+            </div>
+            <div>log out @johndoe123 </div>
+          </div>
 
           <div className={`${styles["account-login-data"]}`}>
             <div className={styles.flexContainer}>
@@ -128,7 +123,6 @@ const Sidenavbar = () => {
           </div>
         </div>
       </div>
-      
     </>
   );
 };

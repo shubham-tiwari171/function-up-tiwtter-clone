@@ -64,7 +64,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 0rem 1rem;
-  padding-right: 2rem;
+  /* padding-right: 2rem; */
   /* margin-bottom: 0.8rem; */
 }
 
@@ -107,25 +107,30 @@ body {
   text-align: center;
   margin-top: 1rem;
   width: 85%;
- 
+  font-weight: 600;
 }
-.featherIcon{
-  
+.featherIcon {
   fill: #fff;
   display: none;
 }
 
 /* Account */
-.add-dlt-account
-{
+.add-dlt-account {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-border-radius: 20px;
-width: 250px;
-text-align: left;
-font-weight: bold;
-padding: 40px 30px;
-visibility: hidden;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  font-weight: bold;
+  padding: 30px 30px;
+  visibility: hidden;
 }
+.add-dlt-account:hover {
+  cursor: pointer;
+}
+.add-account {
+  margin-bottom: 0.5rem;
+}
+
 .account-login-data {
   display: flex;
   justify-content: flex-start;
@@ -156,13 +161,12 @@ visibility: hidden;
   justify-content: space-between;
   align-items: center;
   height: 1.8rem;
-
 }
 
 .circleDiv {
   flex-grow: 1;
   flex-basis: 0;
-  
+
   border-radius: 50%;
   width: 50px;
   border-radius: 50%;
@@ -171,17 +175,12 @@ visibility: hidden;
 .circleDiv > img {
   height: 2.1rem;
   width: 2.1rem;
-  margin-right:80%;
- 
+  margin-right: 80%;
 }
 
-
-
-.lastDiv{
-  margin-left:70px;
-  
+.lastDiv {
+  margin-left: 70px;
 }
-
 
 @media screen and (max-width: 1227px) {
   .links-flex {
@@ -191,7 +190,7 @@ visibility: hidden;
     transition: width 300ms ease-in-out;
   }
   .link-flex {
-    margin-bottom: 0.8rem;
+    padding: 1rem;
   }
   .link-flex > p {
     /* margin-bottom: 2rem; */
@@ -216,25 +215,22 @@ visibility: hidden;
     margin-left: 0.5rem;
     margin-bottom: 0rem;
   }
-  .centerDiv,.lastDiv {
-
-   display: none;
+  .centerDiv,
+  .lastDiv {
+    display: none;
   }
   .account-login-data {
     padding: 0;
   }
-  .button-text{
+  .button-text {
     display: none;
   }
-  .ficon{
-    margin: auto!important;
+  .ficon {
+    margin: auto !important;
   }
-  .featherIcon{
+  .featherIcon {
     display: block;
-   margin: auto;
-  
-    
-
+    margin: auto;
   }
 }
 
