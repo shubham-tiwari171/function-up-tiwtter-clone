@@ -7,6 +7,7 @@ import {
   MdOutlineBookmarkBorder,
   MdListAlt,
   MdMoreHoriz,
+  MdHome,
 } from "react-icons/md";
 const Sidenavbar = () => {
   return (
@@ -21,6 +22,11 @@ const Sidenavbar = () => {
                 alt="Twitter BNlue Logo"
               />
             </a>
+          </div>
+
+          <div className={`${styles["link-flex"]}`}>
+            <MdHome className={`${styles["link-icon"]}`} size={25} />
+            <p className={`${styles["link-text"]}`}>Home</p>
           </div>
 
           <div className={`${styles["link-flex"]}`}>
@@ -60,7 +66,7 @@ const Sidenavbar = () => {
           </div>
 
           <div className={`${styles["link-flex"]}`}>
-            <img src="./logo192.png" className={`${styles["link-icon"]}`} />
+            <img src="./profile.svg" className={`${styles["link-icon"]}`} />
             <p className={`${styles["link-text"]}`}>Profile</p>
           </div>
 
@@ -69,6 +75,23 @@ const Sidenavbar = () => {
               <MdMoreHoriz className={`${styles["link-icon"]}`} size={25} />
             </div>
             <p className={`${styles["link-text"]}`}>More</p>
+          </div>
+
+          <div className={` ${styles["tweet-button"]}`}>
+            <div style={{ margin: "auto" }}>Tweet</div>
+          </div>
+
+          <div className={`${styles["account-login-data"]}`}>
+            <div className={styles.flexContainer}>
+              <div className={`${styles.centerDiv} ${styles.circleDiv}`}>
+                <img src="./logo192.png" alt="Image" />
+              </div>
+              <div className={`d-flex flex-column ${styles.centerDiv} `}>
+                <span>hii</span>
+                <span>hii</span>
+              </div>
+              <div className={styles.centerDiv}>Third Div</div>
+            </div>
           </div>
         </div>
       </div>
