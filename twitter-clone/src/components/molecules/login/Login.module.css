@@ -1,18 +1,24 @@
 *{
     margin: 0;
     padding: 0;
-    background-color: rgb(80, 80, 203);
+    
 }
 
 .Login{
     width: 25vw;
     min-height: 500px;
     background-color: #fff;
-    margin: 5vh 30vw;
+    margin: 8vh 30vw;
     padding: 2vh 6vw;
     border-radius: 12px;
     display: block;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    color: black;
    
+}
+.Login hr{
+width: 90%;
+margin-left: 1.4vw;
 }
 .Logo{
     background:transparent;
@@ -20,6 +26,7 @@
     text-align: center;
 
 }
+
 
 .Logo img{
  width: 50px;
@@ -30,11 +37,12 @@
 }
 .Logo button{
     background: transparent;
-    width: 100%;
+    width: 80%;
     display: flex;
     align-items: center;
    justify-content: center;
    margin: 20px 0;
+   margin-left: 2vw;
    border-radius: 30px;
    cursor: pointer;
    border: 1px solid #999;
@@ -44,6 +52,7 @@
     width: 30px;
     margin-right: 15px;
 }
+
 .Logo span{
     display: block;
     width: 40px;
@@ -61,12 +70,12 @@ border-radius: 5px;
 font-size: 22px;
 border: 1px solid #999;
 padding-left: 12px;
+
 }
 .Buttons{
     background-color: #fff;
 }
 .Buttons button{
-   
     font-size: 20px;
     color: #fff;
     width: 80%;
@@ -95,13 +104,13 @@ form{
 }
 
 @media screen and (max-width:780px){
-   *{
-        background:none;
-    }
+  
     .Login{
-        margin: 5vh 10vw;
-        width: 60vw;
+      margin: 5vh 0 0 13vw;
+       width: 55vw;
        padding-right: 30vw;
+       align-items: center;
+       box-shadow: none;
        align-items: center;
     }
 
