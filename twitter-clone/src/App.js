@@ -4,6 +4,9 @@ import Login from './components/molecules/login/Login';
 import SignUp from './components/organisms/SignUp/SignUp';
 import Sidenavbar from './components/molecules/Sidenavbar/Sidenavbar';
 import Page from './components/page/Page';
+import logo from './logo.svg';
+import './App.css';
+
 function App() {
   return (
     <BrowserRouter>
