@@ -1,67 +1,58 @@
-.container{
-    position: fixed;
-    top:80px;
-    right: 0;
-    width: 20%;
-    margin-right: 70px;
-   
+.container {
+  position: fixed;
+  top: 80px;
+
+  width: 20%;
+  margin-right: 70px;
 }
-.wrapper{
-    background-color: #f5f8fa;
-    padding: 1px 0;
-    border-radius: 20px;
-
+.wrapper {
+  background-color: #f5f8fa;
+  padding: 1px 0;
+  border-radius: 20px;
 }
-.heading{
- padding-bottom: 8px;   
- border-bottom: 1px solid #e6ecf0;
- font-size: 1.1rem;
- padding: 1px 15px;
- }
+.heading {
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e6ecf0;
+  font-size: 1.1rem;
+  padding: 1px 15px;
+}
 
- .country{
-    font-weight: 300;
-    margin: 3px 0;
-    color: rgb(133, 131, 131);
-    font-size: 15px;
-    margin-bottom: 1px;
+.country {
+  font-weight: 300;
+  margin: 3px 0;
+  color: rgb(133, 131, 131);
+  font-size: 15px;
+  margin-bottom: 1px;
+}
+.name {
+  margin-bottom: 3px;
+}
+.tweets {
+  font-weight: 300;
+  color: rgb(133, 131, 131);
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e6ecf0;
+  font-size: 15px;
+  margin-bottom: 3px;
+}
+.show-more {
+  padding: 10px;
+}
+.show-more:hover {
+  background-color: #e3e0dc;
+}
+.trending-now {
+  padding: 5px 15px;
+}
 
+.trending-now:hover {
+  cursor: pointer;
 
- }
- .name{
-  
-   margin-bottom: 3px;
- }
- .tweets{
-   
-    font-weight: 300;
-    color: rgb(133, 131, 131);
-    padding-bottom: 5px;
-    border-bottom: 1px solid #e6ecf0;
-    font-size: 15px;
-    margin-bottom: 3px;
- }
- .show-more{
-    padding: 10px;
+  background-color: #e3e0dc;
+}
 
- }
- .show-more:hover{
-    background-color: #e3e0dc;
- }
- .trending-now{
-    padding: 5px 15px;
-
- }
- 
- .trending-now:hover{
-    cursor: pointer;
-    
-    background-color: #e3e0dc;
-
-    } 
- 
- .show-more{
-    border: none;
-    color:  rgb(29, 155, 240);
-    background-color:#f5f8fa ;
- }
+.show-more {
+  border: none;
+  color: rgb(29, 155, 240);
+  background-color: #f5f8fa;
+}
