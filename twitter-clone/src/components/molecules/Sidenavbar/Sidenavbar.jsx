@@ -10,6 +10,9 @@ import {
   MdHome,
 } from "react-icons/md";
 const Sidenavbar = () => {
+  function handleClick(){
+    alert("yes")
+  }
   return (
     <>
       <div className={`${styles["left-sidebar"]}`}>
@@ -81,16 +84,18 @@ const Sidenavbar = () => {
             <div style={{ margin: "auto" }}>Tweet</div>
           </div>
 
+          {/* Account  */}
+
           <div className={`${styles["account-login-data"]}`}>
             <div className={styles.flexContainer}>
-              <div className={`${styles.centerDiv} ${styles.circleDiv}`}>
+              <div className={`${styles.circleDiv}`}>
                 <img src="./logo192.png" alt="Image" />
               </div>
-              <div className={`d-flex flex-column ${styles.centerDiv} `}>
-                <span>hii</span>
-                <span>hii</span>
+              <div className={` ${styles.centerDiv} `}>
+                <div className={styles.name}><strong>John Doe</strong></div>
+                <div className={styles.username}>@johndoe</div>
               </div>
-              <div className={styles.centerDiv}>Third Div</div>
+              <div className={styles.lastDiv} onClick={handleClick}><MdMoreHoriz className={`${styles["link-icon"]}`} size={25} /></div>
             </div>
           </div>
         </div>
