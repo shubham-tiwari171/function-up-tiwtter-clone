@@ -1,4 +1,5 @@
-import React from "react";
+import { ReactComponent as FeatherIcon } from "../../../../src/feather.svg";
+import React,{useState} from "react";
 import styles from "./Sidenavbar.module.css";
 import {
   MdOutlineSettings,
@@ -10,9 +11,12 @@ import {
   MdHome,
 } from "react-icons/md";
 const Sidenavbar = () => {
-  function handleClick(){
-    alert("yes")
+  const [isVisible,setIsVisible]=useState(false)
+  function handleClick() {
+    setIsVisible(true)
+    return
   }
+  
   return (
     <>
       <div className={`${styles["left-sidebar"]}`}>
@@ -80,11 +84,31 @@ const Sidenavbar = () => {
             <p className={`${styles["link-text"]}`}>More</p>
           </div>
 
-          <div className={` ${styles["tweet-button"]}`}>
-            <div style={{ margin: "auto" }}>Tweet</div>
+          <div className={`${styles["tweet-button"]}`}>
+            
+            <div className={styles.ficon} style={{ margin: "auto" }}>
+              <FeatherIcon
+                className={styles.featherIcon}
+                width="24"
+                height="24"
+              />
+              <span className={styles["button-text"]}>Tweet</span>
+            </div>
+   
           </div>
 
           {/* Account  */}
+
+          {isVisible ?(
+            <div className={styles['add-dlt-account']} style={{visibility:"visible"}}>
+            <div>add an exisiting account</div>
+            <div>logout @johndoe123 </div>
+
+          </div>):(<div className={styles['add-dlt-account']} style={{visibility:"hidden"}}>
+            <div>add an exisiting account</div>
+            <div>logout @johndoe123 </div>
+
+          </div>)}
 
           <div className={`${styles["account-login-data"]}`}>
             <div className={styles.flexContainer}>
@@ -92,14 +116,19 @@ const Sidenavbar = () => {
                 <img src="./logo192.png" alt="Image" />
               </div>
               <div className={` ${styles.centerDiv} `}>
-                <div className={styles.name}><strong>John Doe</strong></div>
-                <div className={styles.username}>@johndoe</div>
+                <div className={styles.name}>
+                  <strong>John Doe</strong>
+                </div>
+                <div className={styles.username}>@johndoe123</div>
               </div>
-              <div className={styles.lastDiv} onClick={handleClick}><MdMoreHoriz className={`${styles["link-icon"]}`} size={25} /></div>
+              <div className={styles.lastDiv} onClick={handleClick}>
+                <MdMoreHoriz className={`${styles["link-icon"]}`} size={25} />
+              </div>
             </div>
           </div>
         </div>
       </div>
+      
     </>
   );
 };

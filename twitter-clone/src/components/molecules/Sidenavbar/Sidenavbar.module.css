@@ -32,6 +32,7 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   color: #000;
+  overflow-y: scroll;
 }
 
 .links-flex {
@@ -106,9 +107,25 @@ body {
   text-align: center;
   margin-top: 1rem;
   width: 85%;
+ 
+}
+.featherIcon{
+  
+  fill: #fff;
+  display: none;
 }
 
 /* Account */
+.add-dlt-account
+{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+border-radius: 20px;
+width: 250px;
+text-align: left;
+font-weight: bold;
+padding: 40px 30px;
+visibility: hidden;
+}
 .account-login-data {
   display: flex;
   justify-content: flex-start;
@@ -159,6 +176,7 @@ body {
 }
 
 
+
 .lastDiv{
   margin-left:70px;
   
@@ -204,6 +222,19 @@ body {
   }
   .account-login-data {
     padding: 0;
+  }
+  .button-text{
+    display: none;
+  }
+  .ficon{
+    margin: auto!important;
+  }
+  .featherIcon{
+    display: block;
+   margin: auto;
+  
+    
+
   }
 }
 
