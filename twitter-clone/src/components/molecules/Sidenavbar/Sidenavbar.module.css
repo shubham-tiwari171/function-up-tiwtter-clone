@@ -64,7 +64,7 @@ body {
   gap: 1rem;
   padding: 0rem 1rem;
   padding-right: 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .link-flex:hover {
@@ -88,20 +88,47 @@ body {
   width: 25px;
   border-radius: 50%;
 }
+button {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  padding-right: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  border: 1px solid white;
+  border-radius: 30px;
+  background-color: #1f9bf0;
+  color: #fff;
+  text-align: center;
+}
 
 @media screen and (max-width: 1227px) {
   .links-flex {
-    width: 3rem;
+    width: 4rem;
     display: flex;
     justify-content: center;
     transition: width 300ms ease-in-out;
   }
   .link-flex > p {
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     display: none;
   }
-  .link-flex > img {
-    margin-bottom: 2rem;
+  /* .link-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  } */
+
+  .blue-logo {
+    padding: 0.8rem;
+    border-radius: 50%;
+  }
+
+  .blue-logo:hover {
+    background-color: var(--hover-light-grey);
   }
 }
 @media screen and (min-width: 1230px) {

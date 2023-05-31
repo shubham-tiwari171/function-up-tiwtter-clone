@@ -70,6 +70,20 @@ const Sidenavbar = () => {
             </div>
             <p className={`${styles["link-text"]}`}>More</p>
           </div>
+
+          <div className="d-flex justify-content-center align-item-center">
+            {/* <div className={`${styles["more-icon"]}`}>
+              <MdMoreHoriz className={`${styles["link-icon"]}`} size={25} />
+            </div>
+            <p className={`${styles["link-text"]}`}>More</p> */}
+            {/* <button
+              className={` btn btn${styles["button-link-flex "]}`}
+              type="button"
+              class="btn btn-primary"
+            >
+              Primary
+            </button> */}
+          </div>
         </div>
       </div>
     </>
