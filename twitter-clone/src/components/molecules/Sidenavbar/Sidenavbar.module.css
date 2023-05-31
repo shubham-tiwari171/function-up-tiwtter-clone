@@ -123,6 +123,7 @@ body {
   font-weight: bold;
   padding: 30px 30px;
   visibility: hidden;
+  position: relative;
 }
 .add-dlt-account:hover {
   cursor: pointer;
@@ -178,10 +179,21 @@ body {
   margin-right: 80%;
 }
 
-.lastDiv {
-  margin-left: 70px;
+.name {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.username {
+  margin-top: 0;
+  padding-bottom: 0;
 }
 
+.lastDiv {
+  margin-left: 30px;
+}
+.add-dlt-account > #mdIcon {
+  display: none;
+}
 @media screen and (max-width: 1227px) {
   .links-flex {
     width: 4rem;
@@ -222,6 +234,15 @@ body {
   .account-login-data {
     padding: 0;
   }
+  .add-dlt-account > #mdIcon {
+    display: block;
+  }
+  #mdIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   .button-text {
     display: none;
   }
@@ -231,6 +252,12 @@ body {
   .featherIcon {
     display: block;
     margin: auto;
+  }
+  .add-dlt-account {
+    width: 1.5rem;
+  }
+  .add-account {
+    display: none;
   }
 }
 

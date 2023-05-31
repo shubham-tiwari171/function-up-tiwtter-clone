@@ -9,6 +9,8 @@ import {
   MdListAlt,
   MdMoreHoriz,
   MdHome,
+  MdLogout,
+  MdAccountCircle,
 } from "react-icons/md";
 const Sidenavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -102,13 +104,21 @@ const Sidenavbar = () => {
             <div className={styles["add-account"]}>
               add an exisiting account
             </div>
-            <div>log out @johndoe123 </div>
+            <div id="mdIcon">
+              <span>
+                <MdAccountCircle size={25} />
+              </span>
+              <span>
+                <MdLogout size={25} />
+              </span>
+            </div>
+            <div className={styles["add-account"]}>log out @johndoe123 </div>
           </div>
 
           <div className={`${styles["account-login-data"]}`}>
             <div className={styles.flexContainer}>
               <div className={`${styles.circleDiv}`}>
-                <img src="./logo192.png" alt="Image" />
+                <img src="./logo192.png" alt="Image" onClick={handleClick} />
               </div>
               <div className={` ${styles.centerDiv} `}>
                 <div className={styles.name}>
