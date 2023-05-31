@@ -19,7 +19,7 @@ const Trending = () => {
     {
         id:3,
         country:"India",
-        whatsTrending:"Mr India",
+        whatsTrending:"MrIndia",
         totalTweets:558
     },
     {
