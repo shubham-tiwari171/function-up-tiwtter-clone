@@ -1,4 +1,5 @@
-import React from "react";
+import { ReactComponent as FeatherIcon } from "../../../../src/feather.svg";
+import React, { useState } from "react";
 import styles from "./Sidenavbar.module.css";
 import {
   MdOutlineSettings,
@@ -8,8 +9,17 @@ import {
   MdListAlt,
   MdMoreHoriz,
   MdHome,
+  MdLogout,
+  MdAccountCircle,
 } from "react-icons/md";
 const Sidenavbar = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const myStyle = { visibility: isVisible ? "visible" : "hidden" };
+
+  function handleClick() {
+    setIsVisible(!isVisible);
+  }
+
   return (
     <>
       <div className={`${styles["left-sidebar"]}`}>
@@ -77,20 +87,48 @@ const Sidenavbar = () => {
             <p className={`${styles["link-text"]}`}>More</p>
           </div>
 
-          <div className={` ${styles["tweet-button"]}`}>
-            <div style={{ margin: "auto" }}>Tweet</div>
+          <div className={`${styles["tweet-button"]}`}>
+            <div className={styles.ficon} style={{ margin: "auto" }}>
+              <FeatherIcon
+                className={styles.featherIcon}
+                width="24"
+                height="24"
+              />
+              <span className={styles["button-text"]}>Tweet</span>
+            </div>
+          </div>
+
+          {/* Account  */}
+
+          <div className={styles["add-dlt-account"]} style={myStyle}>
+            <div className={styles["add-account"]}>
+              add an exisiting account
+            </div>
+            <div id="mdIcon">
+              <span>
+                <MdAccountCircle size={25} />
+              </span>
+              <span>
+                <MdLogout size={25} />
+              </span>
+            </div>
+            <div className={styles["add-account"]}>log out @johndoe123 </div>
           </div>
 
           <div className={`${styles["account-login-data"]}`}>
             <div className={styles.flexContainer}>
-              <div className={`${styles.centerDiv} ${styles.circleDiv}`}>
-                <img src="./logo192.png" alt="Image" />
+              <div className={`${styles.circleDiv}`}>
+                <img src="./logo192.png" alt="Image" onClick={handleClick} />
               </div>
-              <div className={`d-flex flex-column ${styles.centerDiv} `}>
-                <span>hii</span>
-                <span>hii</span>
+              <div className={` ${styles.centerDiv} `}>
+                <div className={styles.name}>
+                  <strong>John Doe</strong>
+                </div>
+                <div className={styles.username}>@johndoe123</div>
               </div>
-              <div className={styles.centerDiv}>Third Div</div>
+              <div className={styles.lastDiv} onClick={handleClick}>
+                <MdMoreHoriz className={`${styles["link-icon"]}`} size={25} />
+              </div>
             </div>
           </div>
         </div>
