@@ -1,0 +1,33 @@
+/* Search && whats Happening */
+.widgets {
+  width: 25%;
+  margin-left: 20px; 
+}
+
+/* Search Tweets */
+.search {
+  width: 25%;
+  position: fixed;
+  padding: 0;
+  top: 10px;
+ 
+  padding-bottom: 20px;
+}
+
+
+.search-tweets {
+  width: 60%;
+  border: none;
+  margin-left: 10px;
+
+  outline-color: rgb(92, 92, 240);
+  background-color: #f5f4f2;
+  padding: 15px 50px;
+  border-radius: 50px;
+}
+.search-icon {
+  position: absolute;
+  top: 13px;
+  left: 40px;
+  border-radius: 5px;
+}
