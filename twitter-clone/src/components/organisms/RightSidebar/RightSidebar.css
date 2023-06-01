@@ -1,4 +1,4 @@
-.right-sidebar {
+/* .right-sidebar {
   
   background-color: #f5f8fa;
   border: 1px solid #e6ecf0;
@@ -6,10 +6,26 @@
   padding:0%;
   max-height: 300px;
   overflow-y: scroll;
-  width: 300px;
+ width: 300px;
   box-sizing: border-box;
   
+} */
+
+.right-sidebar {
+  position: fixed;
+  bottom: 85px;
+  right: 0;
+  background-color: #f5f8fa;
+  border: 1px solid #e6ecf0;
+  border-radius: 8px;
+  padding: 16px;
+  max-height: 300px;
+  overflow-y: scroll;
+  width: 300px;
+  box-sizing: border-box;
+  margin-right: 153px;
 }
+
 
 .right-sidebar::-webkit-scrollbar {
   width: 0;
