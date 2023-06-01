@@ -8,27 +8,28 @@ import { FaRegComment } from "react-icons/fa";
 import { HiOutlineBookmark } from "react-icons/hi";
 import { GoVerified } from "react-icons/go";
 import axios from "axios";
-
+import { tweets } from './constant'
 function PostSection() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(tweets);
 
   useEffect(() => {
-    fetchTweets();
+    fetchTweets()
   }, []);
 
   const fetchTweets = async () => {
     try {
-      const response = await fetch("userData.json");
-      const data = await response.json();
-      console.log(response.data)
-      setData(data);
-      console.log(data);
+      const response = await fetch("./userData.json");
+      const result = await response.json();
+      console.log(result.data)
+      setData(result.data);
     } catch (error) {
       console.error("Error fetching tweets:", error);
-    }
-  };
+    }
+  };
+
 
   return (
+
     <div>
       <div className={style.postSection}>
         {data.map((post) => (
@@ -37,17 +38,14 @@ function PostSection() {
               <Avatar alt="Travis Howard" src={post.avatar} />
             </div>
             <div className={style.details}>
-              <div className={style.name}>{post.name}</div>
-
+              <div className={style.name}>{post.tweetedBy.name}</div>
               <div className={style.icon}>
                 <GoVerified fontSize="1.3rem" />
               </div>
-
               <div className={style.id}>@{post.tweetedBy.name}</div>
             </div>
-            {/* <div>{post.content}</div> */}
-            <div>
-              <div className={style.descrp}></div>
+            <div className={style.content}>
+              {post.content} {/* Render the post content here */}
               <img src={post.image} alt="" className={style.image} />
             </div>
             <div className={style.date}>
