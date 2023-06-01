@@ -1,15 +1,23 @@
-// import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Login from './components/molecules/login/Login';
+import SignUp from './components/organisms/SignUp/SignUp';
+import Sidenavbar from './components/molecules/Sidenavbar/Sidenavbar';
+import Page from './components/page/Page';
+import logo from './logo.svg';
 import './App.css';
-import PostSection from "./components/molecules/Post_Section"
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
 function App() {
   return (
     <div>
-    <PostSection/>
+    {/* <PostSection/> */}
     <BrowserRouter>
+    {/* <Tweet/> */}
       <Routes>
-        <Route path="/" element={<div className="App"></div>}></Route>
+        <Route path="/" element={<Page />} />
+        {/* <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/home" element={<Sidenavbar />} /> */}
       </Routes>
     </BrowserRouter>
     </div>
