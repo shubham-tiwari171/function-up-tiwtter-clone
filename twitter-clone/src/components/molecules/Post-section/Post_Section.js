@@ -27,6 +27,32 @@ function PostSection() {
     }
   };
 
+  const handleLike = (postId) => {
+    setData((prevData) =>
+      prevData.map((post) =>
+        post.id === postId
+          ? {
+            ...post,
+            likeCount: post.isLiked ? post.likeCount - 1 : post.likeCount + 1,
+            isLiked: !post.isLiked,
+          }
+          : post
+      )
+    );
+  };
+
+  const handleRetweet = (postId) => {
+    setData((prevData) =>
+      prevData.map((post) =>
+        post.id === postId
+          ? {
+            ...post,
+            reTweetsCount: post.reTweetsCount + 1,
+          }
+          : post
+      )
+    );
+  };
 
   return (
 
@@ -62,14 +88,20 @@ function PostSection() {
               <div className={style.icons1}>
                 <FaRegComment fontSize="1.4rem" />
               </div>
-              <div className={style.icons2}>
+              <div
+                className={style.icons2}
+                onClick={() => handleRetweet(post.id)}
+              >
                 <LuRepeat2 fontSize="1.4rem" />
               </div>
               <div className={style.icons3}>
                 <HiOutlineBookmark fontSize="1.4rem" />
               </div>
-              <div className={style.icons4}>
-                <MdFavoriteBorder fontSize="1.4rem" />
+              <div className={style.icons4} onClick={() => handleLike(post.id)}>
+                <MdFavoriteBorder
+                  fontSize="1.4rem"
+                  color={post.isLiked ? "red" : "inherit"}
+                />
               </div>
               <div className={style.icons5}>
                 <BsUpload fontSize="1.4rem" />
