@@ -1,0 +1,117 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.postSection {
+  width: 40vw;
+  /* height:90vh;  */
+  height: 100vh;
+  background-color: lightgreen;
+  flex: column;
+}
+.post {
+  width: 39vw;
+  height: 100vh;
+  margin-left: 1%;
+  background-color: whitesmoke;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.9rem;
+  margin-right: 50%;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.date,
+.visible {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+.id {
+  margin-left: -0.8rem;
+  font-size: 1rem;
+}
+.name {
+  margin-left: 3rem;
+  font-weight: bold;
+}
+.icon {
+  margin-left: -0.5rem;
+  color: rgb(29, 155, 240);
+}
+
+.image {
+  width: 39vw;
+  height: 55vh;
+  border-radius: 20px;
+}
+
+.avatar {
+  padding-top: 10px;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 40px;
+}
+.descrp {
+  color: rgb(29, 155, 240);
+}
+
+.icons {
+  border-radius: 50%px;
+}
+
+.icons1 {
+  padding: 0.6rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  color: rgb(29, 155, 240);
+}
+
+.icons2 {
+  padding: 0.6rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  color: rgb(166, 227, 207);
+}
+.icons3 {
+  padding: 0.6rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  color: rgb(249, 24, 128);
+}
+.icons4 {
+  padding: 0.6rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  color: rgb(77, 176, 241);
+}
+
+.icons5 {
+  padding: 0.6rem;
+  border-radius: 50%;
+  margin-top: -0.6rem;
+  color: rgb(29, 155, 240);
+}
+
+.icons1:hover {
+  background-color: rgb(225, 238, 246);
+}
+.icons2:hover {
+  background-color: rgb(222, 241, 235);
+}
+.icons3:hover {
+  background-color: rgb(247, 224, 235);
+}
+
+.icons4:hover {
+  background-color: rgb(225, 238, 246);
+}
+.icons5:hover {
+  background-color: rgb(225, 238, 246);
+}
