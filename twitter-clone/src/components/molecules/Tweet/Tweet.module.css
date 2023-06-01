@@ -1,0 +1,99 @@
+.wrapper {
+  width: 37.375rem;
+  height: 15rem;
+  border: 1px solid rgb(219, 220, 221);
+  margin-left: 25.3rem;
+  position: relative;
+}
+
+.heading {
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 0.8rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.headings {
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.for_you {
+  padding: 1rem;
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.for_you:hover {
+  background-color: rgb(231, 231, 232);
+  cursor: pointer;
+}
+
+.icon {
+  display: flex;
+  margin-top: -1.5rem;
+  margin-left: 1rem;
+  gap: 1rem;
+  text-align: center;
+}
+
+.icon input {
+  width: 90%;
+  outline: none;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.iconPic {
+  color: rgb(231, 231, 232);
+  font-size: 3rem;
+  background-color: rgb(178, 186, 192);
+  border-radius: 50%;
+  border: none;
+}
+.iconPic:hover {
+  color: lightgray;
+}
+
+.bottom_icons {
+  color: rgb(42, 161, 241);
+  display: flex;
+  font-size: 1.3rem;
+  margin-left: 5rem;
+  gap: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.bottom_icons span {
+  padding: 0.2rem;
+  height: auto;
+  width: auto;
+}
+
+.horizontal_line {
+  color: black;
+  margin-bottom: 2.2rem;
+  margin-top: -1rem;
+}
+
+.tweet_btn {
+  background-color: rgb(142, 205, 247);
+  border: none;
+  border-radius: 1.5rem;
+  color: white;
+  margin-left: 13rem;
+  width: 5rem;
+}
+.tweet_btn:hover{
+  background-color:rgb(26, 140, 216);
+}
+
+.bottom_icons span:hover {
+  background-color: rgb(232, 245, 253);
+  border-radius: 50%;
+}
