@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loginSuccess } from '../../../redux/reducers/reducers';
 
 export default function Login() {
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
     const [inputValue, setInputValue] = useState({ name: '', email: '' });
     const { isUserLoggedIn } = useSelector(state => state.users);
     let dispatch = useDispatch();
