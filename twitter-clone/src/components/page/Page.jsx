@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "./Page.module.css";
 import Sidenavbar from "../molecules/Sidenavbar/Sidenavbar";
+import Widgets from "../molecules/right-sidebar/Widgets";
 import Tweet from "../molecules/Tweet/Tweet";
-import PostSection from "../molecules/Post_Section";
+import PostSection from "../molecules/Post-section/Post_Section";
 import RightSidebar from "../organisms/RightSidebar/RightSidebar";
 
 const Page = () => {
@@ -31,30 +32,12 @@ const Page = () => {
           </div>
           <div className={` ${styles["right-section"]} mb-3`}>
             <div className={` ${styles["happening-view-section"]}`}>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
+              <Widgets />
             </div>
-            <div className={` ${styles["follow-view-section"]}`} > < RightSidebar/> </div>
+            <div className={` ${styles["follow-view-section"]}`}>
+              {" "}
+              <RightSidebar />{" "}
+            </div>
             <div className={` ${styles["footer-view-section"]}`}></div>
           </div>
         </div>

@@ -32,7 +32,11 @@ export default function Login() {
                 const userData = JSON.parse(getUserArr);
                 const { name, email } = inputValue;
                 const userLogin = userData.find((element) => {
-                    return element.name === name && element.email === email;
+                    //return element.name === name && element.email === email;
+                    return (
+                        element.name.toLowerCase().replace(/\s/g, '') === name.toLowerCase().replace(/\s/g, '') &&
+                        element.email.toLowerCase().replace(/\s/g, '') === email.toLowerCase().replace(/\s/g, '')
+                    );
                 });
 
                 if (userLogin.length === 0) {

@@ -99,16 +99,18 @@ const Sidenavbar = () => {
             </div>
             <p className={`${styles["link-text"]}`}>More</p>
           </div>
+          
 
           <div className={`${styles["tweet-button"]}`}>
-            <div className={styles.ficon} style={{ margin: "auto" }}>
+            <div className={styles.ficon} >
               <FeatherIcon
                 className={styles.featherIcon}
                 width="24"
                 height="24"
               />
-              <span className={styles["button-text"]}>Tweet</span>
+              
             </div>
+            <span className={styles["button-text"]}>Tweet</span>
           </div>
 
           {/* Account  */}
@@ -118,12 +120,13 @@ const Sidenavbar = () => {
               add an exisiting account
             </div>
             <div id="mdIcon">
-              <span>
-                <MdAccountCircle size={25} />
-              </span>
-              <span>
+              <div className={styles.accIcon}>
+                <MdAccountCircle size={25}  />
+                
+              </div>
+              <div className={styles.logIcon}>
                 <MdLogout size={25} />
-              </span>
+              </div>
             </div>
             <div
               className={styles["add-account"]}
