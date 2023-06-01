@@ -21,14 +21,10 @@
   display: none !important;
 }
 
-
 .right-section {
   height: 100vh;
   flex-grow: 2;
-  border: 1px solid black;
-  
 }
-
 
 .home-section {
   height: 35vh;
@@ -44,17 +40,13 @@
 }
 .happening-view-section {
   height: 60vh;
- 
- ;
 }
 .happening-view-section::-webkit-scrollbar {
   display: none !important;
 }
 .follow-view-section {
   height: 50vh;
-  background-color: rgb(83, 42, 165);
 }
 .follow-view-section {
   height: 50vh;
-  background-color: rgb(83, 42, 165);
 }

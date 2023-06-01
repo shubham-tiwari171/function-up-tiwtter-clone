@@ -11,18 +11,16 @@
   position: fixed;
 
   top: 7px;
- 
- 
 }
 
 .search-tweets {
-  width: 100%;
+  width: 93%;
   border: none;
   margin-left: 10px;
   margin-bottom: 20px;
 
   outline-color: rgb(92, 92, 240);
-  background-color: #EFF3F4;
+  background-color: #eff3f4;
   padding: 10px 60px;
   border-radius: 50px;
 }
@@ -32,8 +30,8 @@
   left: 40px;
   border-radius: 5px;
 }
-@media screen and (max-width: 1227px){
-  .widgets{
+@media screen and (max-width: 1227px) {
+  .widgets {
     display: none;
   }
 }

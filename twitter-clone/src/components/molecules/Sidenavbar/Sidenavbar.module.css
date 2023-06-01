@@ -251,6 +251,7 @@
    .accIcon,.logIcon{
     position: relative;
     right: 10px;
+    display: block;
   }
   
   .add-dlt-account {
@@ -269,10 +270,12 @@
     margin: auto;
   }
   .add-dlt-account {
+   
     width: 1.5rem;
   }
   .add-account {
     display: none;
+    
   }
 }
 

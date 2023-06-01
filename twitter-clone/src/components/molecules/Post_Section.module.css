@@ -117,3 +117,10 @@
 .icons5:hover {
   background-color: rgb(225, 238, 246);
 }
+
+@media screen and (max-width: 1227px){
+  .postSection{
+    width: 100%;
+  }
+
+}
