@@ -20,9 +20,12 @@ const Page = () => {
             <div className={` ${styles["tweet-view-section"]}`}>
               <PostSection />
             </div>
+            <div className={` ${styles["tweet-view-section"]}`}>
+              {" "}
+              <PostSection />
+            </div>
+            <div className={` ${styles["tweet-view-section"]}`}></div>
             {/* <div className={` ${styles["tweet-view-section"]}`}></div>
-            <div className={` ${styles["tweet-view-section"]}`}></div>
-            <div className={` ${styles["tweet-view-section"]}`}></div>
             <div className={` ${styles["tweet-view-section"]}`}></div>
             <div className={` ${styles["tweet-view-section"]}`}></div> */}
           </div>
