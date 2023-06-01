@@ -1,24 +1,24 @@
-import React from 'react';
-import  { useState } from 'react';
+import React, { useState } from 'react';
 import UserCard from '../../atoms/UserCard/UserCard';
 import './RightSidebar.css';
 
-const RightSidebar = () => {
+  const RightSidebar = () => {
   const users = [
+  
     {
       username: 'Shivani Thoke',
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqM9X2C-9dVbDi7EvWHrp-dutARHXXmACCxw&usqp=CAU',
       profile: 'Software Engineer | Tech Enthusiast',
     },
-    {
-      username: 'Jane Smith',
+      {
+      username:'John Smith',
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8fULOER8x8EdPMg3q4TOujQy7KV33aaLONw&usqp=CAU',
       profile: 'Designer | Coffee Lover',
     },
     {
       username: 'Sonali Gupta',
       imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlOkvEo8PGObTOgrZ8g6k-iJaVcBcpkOc9oQ&usqp=CAU',
-      profile: 'Photographer | Nature Enthusiast',
+      profile: 'MakeUp Artist',
     },
     {
         username: 'Neal Model',
