@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Page.module.css";
 import Sidenavbar from "../molecules/Sidenavbar/Sidenavbar";
+import Widgets from '../molecules/right-sidebar/Widgets'
 const Page = () => {
   return (
     <>
@@ -20,28 +21,7 @@ const Page = () => {
           </div>
           <div className={` ${styles["right-section"]} mb-3`}>
             <div className={` ${styles["happening-view-section"]}`}>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
-              <div>hih</div>
+              <Widgets />
             </div>
             <div className={` ${styles["follow-view-section"]}`}></div>
             <div className={` ${styles["footer-view-section"]}`}></div>

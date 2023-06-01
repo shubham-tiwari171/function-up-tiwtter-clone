@@ -21,11 +21,15 @@
   display: none !important;
 }
 
+
 .right-section {
   height: 100vh;
   flex-grow: 2;
   border: 1px solid black;
+  
 }
+
+
 .home-section {
   height: 30vh;
   background-color: brown;
@@ -37,9 +41,9 @@
   margin-bottom: 1rem;
 }
 .happening-view-section {
-  height: 40vh;
-  overflow-y: scroll;
-  background-color: rgb(42, 128, 165);
+  height: 60vh;
+ 
+ ;
 }
 .happening-view-section::-webkit-scrollbar {
   display: none !important;
