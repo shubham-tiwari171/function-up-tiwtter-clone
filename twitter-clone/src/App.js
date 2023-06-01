@@ -9,7 +9,10 @@ import './App.css';
 
 function App() {
   return (
+    <div>
+    {/* <PostSection/> */}
     <BrowserRouter>
+    {/* <Tweet/> */}
       <Routes>
         <Route path="/" element={<Page />} />
         {/* <Route path="/" element={<Login />} />
@@ -17,6 +20,7 @@ function App() {
         <Route path="/home" element={<Sidenavbar />} /> */}
       </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 
