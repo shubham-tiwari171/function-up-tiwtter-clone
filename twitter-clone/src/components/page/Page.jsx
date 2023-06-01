@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Page.module.css";
 import Sidenavbar from "../molecules/Sidenavbar/Sidenavbar";
+import Tweet from "../molecules/Tweet/Tweet";
 const Page = () => {
   return (
     <>
@@ -10,7 +11,9 @@ const Page = () => {
             <Sidenavbar />
           </div>
           <div className={` ${styles["middle-section"]} mb-3`}>
-            <div className={` ${styles["home-section"]}`}></div>
+            <div className={` ${styles["home-section"]}`}>
+              <Tweet/>
+            </div>
             <div className={` ${styles["tweet-view-section"]}`}></div>
             <div className={` ${styles["tweet-view-section"]}`}></div>
             <div className={` ${styles["tweet-view-section"]}`}></div>

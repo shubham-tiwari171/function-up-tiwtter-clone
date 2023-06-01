@@ -13,7 +13,7 @@
 
 .middle-section {
   height: 100vh;
-  flex-grow: 2.5;
+  /* flex-grow: 2.5; */
   border: 1px solid black;
   overflow-y: scroll;
 }
@@ -27,14 +27,15 @@
   border: 1px solid black;
 }
 .home-section {
-  height: 30vh;
-  background-color: brown;
+  height: 35vh;
+
+  /* background-color: brown; */
 }
 .tweet-view-section {
   height: 60vh !important;
   background-color: yellow;
   border: 1px solid black;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
 }
 .happening-view-section {
   height: 40vh;
