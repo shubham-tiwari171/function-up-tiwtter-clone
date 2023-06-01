@@ -9,19 +9,19 @@
   --hover-light-grey: #d6ddec;
 }
 
-body {
-  /* background-color: var(--black); */
+/* body {
+ 
   color: var(--white);
   margin: 0;
   font-family: "Chirp", sans-serif;
   overflow-x: hidden;
   display: flex;
-}
+} */
 
 /* Left Sidebar */
 
 .left-sidebar {
-  margin-top: 0.4rem;
+  /* margin-top: 0.4rem; */
   position: sticky;
   height: 100vh;
   left: 0;
@@ -32,6 +32,7 @@ body {
   justify-content: flex-end;
   align-items: flex-start;
   color: #000;
+  overflow-y: scroll;
 }
 
 .links-flex {
@@ -63,7 +64,7 @@ body {
   align-items: center;
   gap: 1rem;
   padding: 0rem 1rem;
-  padding-right: 2rem;
+  /* padding-right: 2rem; */
   /* margin-bottom: 0.8rem; */
 }
 
@@ -106,14 +107,38 @@ body {
   text-align: center;
   margin-top: 1rem;
   width: 85%;
+  font-weight: 600;
 }
+.featherIcon {
+  fill: #fff;
+  display: none;
+}
+
+/* Account */
+.add-dlt-account {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 20px;
+  width: 250px;
+  text-align: left;
+  font-weight: bold;
+  padding: 30px 30px;
+  visibility: hidden;
+  position: relative;
+}
+.add-dlt-account:hover {
+  cursor: pointer;
+}
+.add-account {
+  margin-bottom: 0.5rem;
+}
+
 .account-login-data {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
-  padding: 1rem;
-  padding-right: 2rem;
+  padding: 1rem 8px;
+
   margin-bottom: 1rem;
   margin-left: 1rem;
   border: 1px solid white;
@@ -142,7 +167,7 @@ body {
 .circleDiv {
   flex-grow: 1;
   flex-basis: 0;
-  margin-right: 1.3rem;
+
   border-radius: 50%;
   width: 50px;
   border-radius: 50%;
@@ -151,15 +176,24 @@ body {
 .circleDiv > img {
   height: 2.1rem;
   width: 2.1rem;
+  margin-right: 80%;
 }
 
-.centerDiv {
-  flex-grow: 1;
-  flex-basis: 0;
-  margin-right: 1.3rem;
-  width: 50px;
+.name {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+.username {
+  margin-top: 0;
+  padding-bottom: 0;
 }
 
+.lastDiv {
+  margin-left: 30px;
+}
+.add-dlt-account > #mdIcon {
+  display: none;
+}
 @media screen and (max-width: 1227px) {
   .links-flex {
     width: 4rem;
@@ -168,7 +202,7 @@ body {
     transition: width 300ms ease-in-out;
   }
   .link-flex {
-    margin-bottom: 0.8rem;
+    padding: 1rem;
   }
   .link-flex > p {
     /* margin-bottom: 2rem; */
@@ -192,6 +226,38 @@ body {
     border-radius: 50%;
     margin-left: 0.5rem;
     margin-bottom: 0rem;
+  }
+  .centerDiv,
+  .lastDiv {
+    display: none;
+  }
+  .account-login-data {
+    padding: 0;
+  }
+  .add-dlt-account > #mdIcon {
+    display: block;
+  }
+  #mdIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-text {
+    display: none;
+  }
+  .ficon {
+    margin: auto !important;
+  }
+  .featherIcon {
+    display: block;
+    margin: auto;
+  }
+  .add-dlt-account {
+    width: 1.5rem;
+  }
+  .add-account {
+    display: none;
   }
 }
 
