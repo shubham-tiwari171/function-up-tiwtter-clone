@@ -3,6 +3,7 @@ import styles from "./Page.module.css";
 import Sidenavbar from "../molecules/Sidenavbar/Sidenavbar";
 import Tweet from "../molecules/Tweet/Tweet";
 import PostSection from "../molecules/Post_Section";
+import RightSidebar from "../organisms/RightSidebar/RightSidebar";
 
 const Page = () => {
   return (
@@ -53,7 +54,7 @@ const Page = () => {
               <div>hih</div>
               <div>hih</div>
             </div>
-            <div className={` ${styles["follow-view-section"]}`}></div>
+            <div className={` ${styles["follow-view-section"]}`} > < RightSidebar/> </div>
             <div className={` ${styles["footer-view-section"]}`}></div>
           </div>
         </div>
