@@ -8,7 +8,7 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Modal from "@mui/material/Modal";
 import { BsXLg } from "react-icons/bs";
-
+import { v4 as uuid4 } from "uuid"
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,7 +19,7 @@ const SignUp = () => {
   const [day, setDay] = useState("");
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
-  
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -75,10 +75,8 @@ const SignUp = () => {
         userData = JSON.parse(storedUserData);
       }
 
-      userData.push({ name, phone, email, dob: dateOfBirth });
+      userData.push({ id: uuid4(), name, phone, email, dob: dateOfBirth });
       localStorage.setItem("userData", JSON.stringify(userData));
-
-      console.log(userData);
 
       setName("");
       setPhone("");
@@ -97,7 +95,7 @@ const SignUp = () => {
       onClose={close}
       aria-labelledby="registration-modal-title"
       aria-describedby="registration-modal-description"
-    
+
     >
       <div className={style.Container}>
         <span>
@@ -159,7 +157,7 @@ const SignUp = () => {
                 style={{ minWidth: "200px" }}
               >
                 {Array.from(Array(12), (_, i) => i + 1).map((month) => (
-                  <MenuItem key={month} value={month} sx={{width:'5rem'}}> 
+                  <MenuItem key={month} value={month} sx={{ width: '5rem' }}>
                     {new Date(0, month).toLocaleString("default", {
                       month: "long",
                     })}
@@ -170,7 +168,7 @@ const SignUp = () => {
             <FormControl >
               <InputLabel>Day</InputLabel>
               <Select
-              
+
                 value={day}
                 onChange={getDay}
                 style={{ minWidth: "80px" }}
@@ -199,11 +197,10 @@ const SignUp = () => {
             </FormControl>
           </div>
           <button
-            className={`${style.nextBtn} ${
-              !name || !phone || !email || !month || !day || !year
-                ? ""
-                : style.enabled
-            }`}
+            className={`${style.nextBtn} ${!name || !phone || !email || !month || !day || !year
+              ? ""
+              : style.enabled
+              }`}
             onClick={getUserData}
             disabled={!name || !phone || !email || !month || !day || !year}
           >
