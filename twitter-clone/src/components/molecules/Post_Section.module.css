@@ -47,7 +47,8 @@
 }
 
 .image {
-  width: 39vw;
+  /* width: 35vw; */
+  width:38vw;
   height: 55vh;
   border-radius: 20px;
 }

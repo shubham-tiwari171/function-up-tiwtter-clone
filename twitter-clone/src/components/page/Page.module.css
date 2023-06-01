@@ -14,7 +14,7 @@
 .middle-section {
   height: 100vh;
   /* flex-grow: 2.5; */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   overflow-y: scroll;
 }
 .middle-section::-webkit-scrollbar {

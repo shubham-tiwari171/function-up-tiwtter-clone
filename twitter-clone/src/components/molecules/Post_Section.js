@@ -48,17 +48,17 @@ function PostSection() {
             <div className={style.icons1}>
               <FaRegComment fontSize="1.4rem" />
             </div>
-            <div>
-              <LuRepeat2 fontSize="1.4rem" className={style.icons2} />
+            <div  className={style.icons2}>
+              <LuRepeat2 fontSize="1.4rem" />
             </div>
-            <div>
-              <HiOutlineBookmark fontSize="1.4rem" className={style.icons3} />
+            <div className={style.icons3} >
+              <HiOutlineBookmark fontSize="1.4rem"  />
             </div>
-            <div>
-              <MdFavoriteBorder fontSize="1.4rem" className={style.icons4} />
+            <div className={style.icons4}>
+              <MdFavoriteBorder fontSize="1.4rem"  />
             </div>
-            <div>
-              <BsUpload fontSize="1.4rem" className={style.icons5} />
+            <div className={style.icons5}>
+              <BsUpload fontSize="1.4rem" />
             </div>
           </div>
 
