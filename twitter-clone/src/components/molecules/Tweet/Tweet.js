@@ -10,14 +10,16 @@ import { AiOutlineSchedule } from "react-icons/ai";
 
 const Tweet = () => {
   return (
-    <div className={style.wrapper}>
-      <div className={style.wrapper_middle_heading}>
-        <div className={style.heading}>
-          <p>Home</p>
-        </div>
-        <div className={style.headings}>
-          <div className={style.for_you}>For you</div>
-          <div className={style.for_you}>Following</div>
+    <>
+      <div className={style.wrapper}>
+        <div className={style.wrapper_middle_heading}>
+          <div className={style.heading}>
+            <p>Home</p>
+          </div>
+          <div className={style.headings}>
+            <div className={style.for_you}>For you</div>
+            <div className={style.for_you}>Following</div>
+          </div>
         </div>
         <hr className={style.horizontal_line} />
         <div className={style.icon}>
@@ -47,7 +49,7 @@ const Tweet = () => {
           <button className={style.tweet_btn}>Tweet</button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
