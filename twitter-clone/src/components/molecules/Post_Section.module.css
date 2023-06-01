@@ -7,14 +7,14 @@
   width: 40vw;
   /* height:90vh;  */
   height: 100vh;
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   flex: column;
 }
 .post {
   width: 39vw;
   height: 100vh;
   margin-left: 1%;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 
 .details {
@@ -108,7 +108,6 @@
 .icons3:hover {
   background-color: rgb(247, 224, 235);
 }
-
 .icons4:hover {
   background-color: rgb(225, 238, 246);
 }
