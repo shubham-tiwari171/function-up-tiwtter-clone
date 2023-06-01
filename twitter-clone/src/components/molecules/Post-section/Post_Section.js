@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import style from "./Post_Section.module.css";
 import Avatar from "@mui/material/Avatar";
 import { LuRepeat2 } from "react-icons/lu";
-import { MdFavoriteBorder } from "react-icons/md";
+import { MdFavoriteBorder, MdOutlinePoll } from "react-icons/md";
 import { BsUpload } from "react-icons/bs";
 import { FaRegComment } from "react-icons/fa";
 import { HiOutlineBookmark } from "react-icons/hi";
@@ -78,39 +78,50 @@ function PostSection() {
               <p></p>
               <p></p>
             </div>
-            <div className={style.visible}>
-              <p>{post.reTweetsCount} Retweets</p>
-              <p>{post.quotes} Quote</p>
-              <p>{post.likeCount} Likes</p>
-              <p>{post.commentCount} Bookmark</p>
-            </div>
-            <div className={style.icons}>
-              <div className={style.icons1}>
-                <FaRegComment fontSize="1.4rem" />
+            {/* <div className={style.visible}>
+             
+            </div> */}
+            <div div className="d-flex justify-content-evenly" >
+              <div className={`d-flex align-items-center ml-2`}>
+                <span><FaRegComment className={style.icons1} size={30} /></span>
               </div>
               <div
-                className={style.icons2}
+                className={`d-flex align-items-center `}
                 onClick={() => handleRetweet(post.id)}
               >
-                <LuRepeat2 fontSize="1.4rem" />
+                <LuRepeat2 className={style.icons2} size={30} />
+                {/* <span className="ml-1">{post.quotes}</span> */}
+                <span className="ml-1">{post.reTweetsCount}</span>
               </div>
-              <div className={style.icons3}>
-                <HiOutlineBookmark fontSize="1.4rem" />
-              </div>
-              <div className={style.icons4} onClick={() => handleLike(post.id)}>
+              <div
+                className={`d-flex align-items-center `}
+                onClick={() => handleLike(post.id)}
+              >
                 <MdFavoriteBorder
-                  fontSize="1.4rem"
+                  size={30}
+                  className={style.icons3}
                   color={post.isLiked ? "red" : "inherit"}
                 />
+                <span className="ml-1">{post.likeCount}</span>
               </div>
-              <div className={style.icons5}>
-                <BsUpload fontSize="1.4rem" />
+              <div
+                className={`d-flex align-items-center g-4`}>
+                <MdOutlinePoll
+                  size={30}
+                  className={style.icons4}
+                />
+                <span className="ml-1">155.5k</span>
+              </div>
+              <div className={`d-flex align-items-center`}>
+                <BsUpload className={style.icons5} size={25} />
               </div>
             </div>
+
           </div>
-        ))}
-      </div>
-    </div>
+        ))
+        }
+      </div >
+    </div >
   );
 }
 

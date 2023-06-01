@@ -70,35 +70,48 @@
 }
 
 .icons1 {
+  height: 3rem;
+  width: 3rem;
   padding: 0.6rem;
   border-radius: 50%;
-  margin-top: -0.6rem;
+  /* margin-top: -0.6rem; */
   color: rgb(29, 155, 240);
+  cursor: pointer;
 }
-
+/* .icons1:hover {
+  background-color: aquamarine;
+} */
 .icons2 {
+  height: 3rem;
+  width: 3rem;
   padding: 0.6rem;
   border-radius: 50%;
-  margin-top: -0.6rem;
-  color: rgb(166, 227, 207);
+  color: rgb(0, 186, 124);
+  cursor: pointer;
 }
+/* .icons2:hover {
+  background-color: rgb(222, 241, 235);
+} */
 .icons3 {
+  height: 3rem;
+  width: 3rem;
   padding: 0.6rem;
   border-radius: 50%;
-  margin-top: -0.6rem;
   color: rgb(249, 24, 128);
 }
 .icons4 {
+  height: 3rem;
+  width: 3rem;
   padding: 0.6rem;
   border-radius: 50%;
-  margin-top: -0.6rem;
   color: rgb(77, 176, 241);
 }
 
 .icons5 {
+  height: 3rem;
+  width: 3rem;
   padding: 0.6rem;
   border-radius: 50%;
-  margin-top: -0.6rem;
   color: rgb(29, 155, 240);
 }
 
