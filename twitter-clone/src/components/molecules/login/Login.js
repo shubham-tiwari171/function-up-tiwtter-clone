@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Login.module.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { loginSuccess } from '../../../redux/reducers/reducers';
 
 export default function Login() {
-    const redirectHome = useNavigate();
+    const navigate = useNavigate();
     const [inputValue, setInputValue] = useState({ name: '', email: '' });
-    
+    const { isUserLoggedIn } = useSelector(state => state.users);
+    let dispatch = useDispatch();
     useEffect(() => {
         const getUserData = localStorage.getItem('userData');
         setInputValue((prevState) => ({
@@ -20,7 +23,7 @@ export default function Login() {
             [e.target.name]: e.target.value,
         }));
     }
-    console.log(inputValue)
+
     function handleSubmit(e) {
         e.preventDefault();
         const getUserArr = localStorage.getItem('userData');
@@ -28,26 +31,34 @@ export default function Login() {
             try {
                 const userData = JSON.parse(getUserArr);
                 const { name, email } = inputValue;
-                const userLogin = userData.filter((element) => {
-                    return element.name === name && element.email === email;
+                const userLogin = userData.find((element) => {
+                    //return element.name === name && element.email === email;
+                    return (
+                        element.name.toLowerCase().replace(/\s/g, '') === name.toLowerCase().replace(/\s/g, '') &&
+                        element.email.toLowerCase().replace(/\s/g, '') === email.toLowerCase().replace(/\s/g, '')
+                    );
                 });
+
                 if (userLogin.length === 0) {
                     alert('Invalid details');
                 } else {
-                    alert('Conform to go on Home');
-                    redirectHome('/home');
+                    dispatch(loginSuccess(userLogin));
+
+                    //console.log(userLogin.id)
+                    // console.log("success")
+                    // navigate('/page');
                 }
             } catch (error) {
                 console.error('Error parsing userData:', error);
                 alert('User data is invalid');
             }
         } else {
-            alert('User data not found');
+            alert('User data not found')
         }
     }
 
     return (
-        
+
         <div className={styles.Login}>
             <div className={styles.Logo}>
                 <img alt='twitter' src='./twitter.png' />

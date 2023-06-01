@@ -12,13 +12,26 @@ import {
   MdLogout,
   MdAccountCircle,
 } from "react-icons/md";
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { logout } from "../../../redux/reducers/reducers";
 const Sidenavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
   const myStyle = { visibility: isVisible ? "visible" : "hidden" };
+  const { isUserLoggedIn, user } = useSelector((state) => state.users);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   function handleClick() {
     setIsVisible(!isVisible);
   }
+
+  const handleLogoutUserClick = () => {
+    if (isUserLoggedIn === true) {
+      console.log(user);
+      navigate("/");
+    }
+  };
 
   return (
     <>
@@ -115,7 +128,12 @@ const Sidenavbar = () => {
                 <MdLogout size={25} />
               </div>
             </div>
-            <div className={styles["add-account"]}>log out @johndoe123 </div>
+            <div
+              className={styles["add-account"]}
+              onClick={handleLogoutUserClick}
+            >
+              log out @johndoe123{" "}
+            </div>
           </div>
 
           <div className={`${styles["account-login-data"]}`}>
@@ -139,5 +157,4 @@ const Sidenavbar = () => {
     </>
   );
 };
-
 export default Sidenavbar;
