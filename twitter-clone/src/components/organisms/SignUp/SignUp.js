@@ -14,16 +14,12 @@ const SignUp = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [dob, setDob] = useState("");
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
   const [month, setMonth] = useState("");
   const [year, setYear] = useState("");
   const [day, setDay] = useState("");
   const [open, setOpen] = useState(false);
   const [close, setClose] = useState(false);
-  const [dobError, setDobError] = useState("");
-
+  
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -40,23 +36,14 @@ const SignUp = () => {
 
   const getName = (e) => {
     setName(e.target.value);
-    if (nameError) {
-      setNameError("");
-    }
   };
 
   const getPhone = (e) => {
     setPhone(e.target.value);
-    if (phoneError) {
-      setPhoneError("");
-    }
   };
 
   const getEmail = (e) => {
     setEmail(e.target.value);
-    if (emailError) {
-      setEmailError("");
-    }
   };
 
   const getMonth = (event) => {
@@ -76,13 +63,9 @@ const SignUp = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!nameRegex.test(name)) {
-      setNameError("Please Enter Valid Name");
     } else if (!phoneRegex.test(phone)) {
-      setPhoneError("Please Enter Valid Phone");
     } else if (!emailRegex.test(email)) {
-      setEmailError("Please Enter Valid Email");
     } else if (month === "" || day === "" || year === "") {
-      setDobError("Please select a valid date of birth");
     } else {
       const dateOfBirth = { year, month, day };
       const storedUserData = localStorage.getItem("userData");
@@ -114,6 +97,7 @@ const SignUp = () => {
       onClose={close}
       aria-labelledby="registration-modal-title"
       aria-describedby="registration-modal-description"
+    
     >
       <div className={style.Container}>
         <span>
@@ -133,9 +117,6 @@ const SignUp = () => {
             size="medium"
             sx={{ width: "25rem" }}
           />
-          {nameError && name && (
-            <span className={style.error}>{nameError}</span>
-          )}
 
           <br />
 
@@ -149,9 +130,6 @@ const SignUp = () => {
             size="medium"
             sx={{ width: "25rem" }}
           />
-          {phoneError && phone && (
-            <span className={style.error}>{phoneError}</span>
-          )}
 
           <br />
 
@@ -164,9 +142,6 @@ const SignUp = () => {
             onChange={getEmail}
             sx={{ width: "25rem" }}
           />
-          {emailError && email && (
-            <span className={style.error}>{emailError}</span>
-          )}
 
           <br />
           <h6 className={style.headingDob}>Date of Birth</h6>
@@ -184,7 +159,7 @@ const SignUp = () => {
                 style={{ minWidth: "200px" }}
               >
                 {Array.from(Array(12), (_, i) => i + 1).map((month) => (
-                  <MenuItem key={month} value={month}>
+                  <MenuItem key={month} value={month} sx={{width:'5rem'}}> 
                     {new Date(0, month).toLocaleString("default", {
                       month: "long",
                     })}
@@ -192,9 +167,10 @@ const SignUp = () => {
                 ))}
               </Select>
             </FormControl>
-            <FormControl>
+            <FormControl >
               <InputLabel>Day</InputLabel>
               <Select
+              
                 value={day}
                 onChange={getDay}
                 style={{ minWidth: "80px" }}
