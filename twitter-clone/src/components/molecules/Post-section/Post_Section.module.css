@@ -10,7 +10,7 @@
   height: 100vh;
   /* background-color: lightgreen; */
   flex: column;
-  padding: 0.2rem;
+  /* padding: 0.2rem; */
 }
 .post {
   width: 39vw;

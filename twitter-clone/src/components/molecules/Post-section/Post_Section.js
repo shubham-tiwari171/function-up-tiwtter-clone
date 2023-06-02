@@ -9,8 +9,10 @@ import { HiOutlineBookmark } from "react-icons/hi";
 import { GoVerified } from "react-icons/go";
 import axios from "axios";
 import { tweets } from './constant'
+import { useSelector, useDispatch } from "react-redux";
 function PostSection() {
-  const [data, setData] = useState(tweets);
+  // const { tweetsArray } = useSelector((state) => state.users)
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchTweets()
@@ -20,7 +22,7 @@ function PostSection() {
     try {
       const response = await fetch("./userData.json");
       const result = await response.json();
-      console.log(result.data)
+      //console.log(result.data)
       setData(result.data);
     } catch (error) {
       console.error("Error fetching tweets:", error);
