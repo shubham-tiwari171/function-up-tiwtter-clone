@@ -8,7 +8,8 @@ import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import Modal from "@mui/material/Modal";
 import { BsXLg } from "react-icons/bs";
-import { v4 as uuid4 } from "uuid"
+import { v4 as uuid4 } from "uuid";
+
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -49,11 +50,27 @@ const SignUp = () => {
   const getMonth = (event) => {
     setMonth(event.target.value);
   };
+
   const getYear = (e) => {
     setYear(e.target.value);
   };
+
   const getDay = (e) => {
-    setDay(e.target.value);
+    const selectedMonth = Number(month);
+    const selectedDay = Number(e.target.value);
+
+    let maxDays = 31;
+    if (selectedMonth === 2) {
+      maxDays = 28;
+    } else if ([4, 6, 9, 11].includes(selectedMonth)) {
+      maxDays = 30;
+    }
+
+    if (selectedDay >= 1 && selectedDay <= maxDays) {
+      setDay(e.target.value);
+    } else {
+      setDay("");
+    }
   };
 
   const getUserData = (e) => {
@@ -63,9 +80,13 @@ const SignUp = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!nameRegex.test(name)) {
+      // Handle invalid name input
     } else if (!phoneRegex.test(phone)) {
+      // Handle invalid phone input
     } else if (!emailRegex.test(email)) {
+      // Handle invalid email input
     } else if (month === "" || day === "" || year === "") {
+      // Handle missing date of birth
     } else {
       const dateOfBirth = { year, month, day };
       const storedUserData = localStorage.getItem("userData");
@@ -95,7 +116,6 @@ const SignUp = () => {
       onClose={close}
       aria-labelledby="registration-modal-title"
       aria-describedby="registration-modal-description"
-
     >
       <div className={style.Container}>
         <span>
@@ -157,18 +177,17 @@ const SignUp = () => {
                 style={{ minWidth: "200px" }}
               >
                 {Array.from(Array(12), (_, i) => i + 1).map((month) => (
-                  <MenuItem key={month} value={month} sx={{ width: '5rem' }}>
-                    {new Date(0, month).toLocaleString("default", {
+                  <MenuItem key={month} value={month} sx={{ width: "5rem" }}>
+                    {new Date(0, month - 1).toLocaleString("default", {
                       month: "long",
                     })}
                   </MenuItem>
                 ))}
               </Select>
             </FormControl>
-            <FormControl >
+            <FormControl>
               <InputLabel>Day</InputLabel>
               <Select
-
                 value={day}
                 onChange={getDay}
                 style={{ minWidth: "80px" }}
@@ -197,10 +216,11 @@ const SignUp = () => {
             </FormControl>
           </div>
           <button
-            className={`${style.nextBtn} ${!name || !phone || !email || !month || !day || !year
-              ? ""
-              : style.enabled
-              }`}
+            className={`${style.nextBtn} ${
+              !name || !phone || !email || !month || !day || !year
+                ? ""
+                : style.enabled
+            }`}
             onClick={getUserData}
             disabled={!name || !phone || !email || !month || !day || !year}
           >

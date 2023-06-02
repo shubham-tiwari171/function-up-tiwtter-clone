@@ -5,6 +5,8 @@ import Widgets from "../molecules/right-sidebar/Widgets";
 import Tweet from "../molecules/Tweet/Tweet";
 import PostSection from "../molecules/Post-section/Post_Section";
 import RightSidebar from "../organisms/RightSidebar/RightSidebar";
+import RightDownFooter from "../molecules/RightDownFooter/RightDownFooter";
+
 
 const Page = () => {
   return (
@@ -38,7 +40,9 @@ const Page = () => {
               {" "}
               <RightSidebar />{" "}
             </div>
-            <div className={` ${styles["footer-view-section"]}`}></div>
+            <div className={` ${styles["footer-view-section"]}`}>
+              <RightDownFooter />
+            </div>
           </div>
         </div>
       </div>

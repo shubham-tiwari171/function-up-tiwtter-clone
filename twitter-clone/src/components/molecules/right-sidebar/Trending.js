@@ -52,8 +52,8 @@ const Trending = () => {
           <div key={item.id} className={styles["trending-now"]}>
             <div className={styles["trending-more-wrapper"]}>
               <span className={styles.country}>Trending in {item.country}</span>
-              <span onClick={() => handleMore(item.id)}>
-                <MdMoreHoriz size={20} />
+              <span onClick={() => handleMore(item.id)} className={styles['more-icon-wrap']}>
+                <MdMoreHoriz size={20} className={styles['more-icon']}  />
               </span>
             </div>
             <span className={styles.name}>
