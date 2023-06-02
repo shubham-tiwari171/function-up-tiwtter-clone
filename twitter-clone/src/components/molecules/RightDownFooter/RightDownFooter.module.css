@@ -1,8 +1,6 @@
 .right {
-  width: 25vw;
-  
-  position: fixed;
-  bottom: 0.5rem;
+  width: 10vw;
+  margin: 2rem;
   /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
   padding: 1rem;
   color: rgb(83, 100, 113);

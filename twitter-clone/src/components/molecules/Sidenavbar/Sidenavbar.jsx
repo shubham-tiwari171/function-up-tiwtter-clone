@@ -17,6 +17,9 @@ import { useNavigate } from "react-router-dom";
 import { logout } from "../../../redux/reducers/reducers";
 const Sidenavbar = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [uniqueNumber, setUniqueNumber] = useState(
+    Math.floor(Math.random() * 900) + 100
+  );
   const myStyle = { visibility: isVisible ? "visible" : "hidden" };
   const { isUserLoggedIn, user } = useSelector((state) => state.users);
   const dispatch = useDispatch();
@@ -28,7 +31,7 @@ const Sidenavbar = () => {
 
   const handleLogoutUserClick = () => {
     if (isUserLoggedIn === true) {
-      console.log(user);
+      dispatch(logout());
       navigate("/");
     }
   };
@@ -99,16 +102,14 @@ const Sidenavbar = () => {
             </div>
             <p className={`${styles["link-text"]}`}>More</p>
           </div>
-          
 
           <div className={`${styles["tweet-button"]}`}>
-            <div className={styles.ficon} >
+            <div className={styles.ficon}>
               <FeatherIcon
                 className={styles.featherIcon}
                 width="24"
                 height="24"
               />
-              
             </div>
             <span className={styles["button-text"]}>Tweet</span>
           </div>
@@ -121,8 +122,7 @@ const Sidenavbar = () => {
             </div>
             <div id="mdIcon">
               <div className={styles.accIcon}>
-                <MdAccountCircle size={25}  />
-                
+                <MdAccountCircle size={25} />
               </div>
               <div className={styles.logIcon}>
                 <MdLogout size={25} />
@@ -132,7 +132,8 @@ const Sidenavbar = () => {
               className={styles["add-account"]}
               onClick={handleLogoutUserClick}
             >
-              log out @johndoe123{" "}
+              log out @{user.name}
+              {uniqueNumber}{" "}
             </div>
           </div>
 
@@ -143,9 +144,12 @@ const Sidenavbar = () => {
               </div>
               <div className={` ${styles.centerDiv} `}>
                 <div className={styles.name}>
-                  <strong>John Doe</strong>
+                  <strong>{user.name}</strong>
                 </div>
-                <div className={styles.username}>@johndoe123</div>
+                <div className={styles.username}>
+                  @{user.name}
+                  {uniqueNumber}
+                </div>
               </div>
               <div className={styles.lastDiv} onClick={handleClick}>
                 <MdMoreHoriz className={`${styles["link-icon"]}`} size={25} />

@@ -7,8 +7,39 @@ import { BsEmojiSmile } from "react-icons/bs";
 import { CgPoll } from "react-icons/cg";
 import { CiLocationOn } from "react-icons/ci";
 import { AiOutlineSchedule } from "react-icons/ai";
-
+import { useState } from "react";
+import { v4 as uuid4 } from "uuid";
+import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { getTweets, tweets } from '../../../redux/reducers/reducers'
 const Tweet = () => {
+  const [tweet, setTweet] = useState({
+    id: "",
+    content: "",
+    createdAt: "",
+    image: "",
+    tweetedBy: {
+      id: "",
+      name: "",
+    },
+    likeCount: Math.floor(Math.random() * 900) + 100,
+    commentCount: Math.floor(Math.random() * 900) + 100,
+    reTweetsCount: Math.floor(Math.random() * 900) + 100,
+    isLiked: true,
+  },)
+  const dispatch = useDispatch();
+  const handleOnChangeTweet = (e) => {
+    setTweet({ ...tweet, id: uuid4(), createdAt: new Date().getTime(), [e.target.id]: e.target.value })
+  }
+
+  const handleCreateTweet = () => {
+    // console.log(tweet)
+    dispatch(tweets(tweet))
+    dispatch(getTweets(tweet))
+    console.log("tweet",)
+
+  }
+
   return (
     <>
       <div className={style.wrapper}>
@@ -25,7 +56,7 @@ const Tweet = () => {
         <div className={style.icon}>
           <CgProfile className={style.iconPic} />
 
-          <input type="text" placeholder="What is happening?!" />
+          <input type="text" id="content" placeholder="What is happening?!" onChange={handleOnChangeTweet} />
         </div>
         <div className={style.bottom_icons}>
           <span>
@@ -46,7 +77,7 @@ const Tweet = () => {
           <span>
             <CiLocationOn />
           </span>
-          <button className={style.tweet_btn}>Tweet</button>
+          <button className={style.tweet_btn} onClick={handleCreateTweet}>Tweet</button>
         </div>
       </div>
     </>

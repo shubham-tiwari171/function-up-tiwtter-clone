@@ -7,7 +7,6 @@ import PostSection from "../molecules/Post-section/Post_Section";
 import RightSidebar from "../organisms/RightSidebar/RightSidebar";
 import RightDownFooter from "../molecules/RightDownFooter/RightDownFooter";
 
-
 const Page = () => {
   return (
     <>
@@ -23,14 +22,7 @@ const Page = () => {
             <div className={` ${styles["tweet-view-section"]}`}>
               <PostSection />
             </div>
-            <div className={` ${styles["tweet-view-section"]}`}>
-              {" "}
-              <PostSection />
-            </div>
             <div className={` ${styles["tweet-view-section"]}`}></div>
-            {/* <div className={` ${styles["tweet-view-section"]}`}></div>
-            <div className={` ${styles["tweet-view-section"]}`}></div>
-            <div className={` ${styles["tweet-view-section"]}`}></div> */}
           </div>
           <div className={` ${styles["right-section"]} mb-3`}>
             <div className={` ${styles["happening-view-section"]}`}>
@@ -41,7 +33,7 @@ const Page = () => {
               <RightSidebar />{" "}
             </div>
             <div className={` ${styles["footer-view-section"]}`}>
-              <RightDownFooter />
+              {/* <RightDownFooter /> */}
             </div>
           </div>
         </div>
