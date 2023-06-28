@@ -61,9 +61,10 @@ Deployed Application: [Twitter Clone](https://legendary-crisp-0923a2.netlify.app
 ## Collabrators
 
 
-- [@shubham-tiwari171](https://github/shubham-tiwari171)
+
 - [@geekyneha](https://github.com/geekyneha)
-- [@Bablukmr](https://github.com/Bablukmr)
 - [@shivu317](https://github.com/shivu317)
 - [@pragati-sriv](https://github.com/pragati-sriv)
+- [@shubham-tiwari171](https://github/shubham-tiwari171)
+- [@Bablukmr](https://github.com/Bablukmr)
 - [@]()
