@@ -7,7 +7,7 @@ Welcome to the Twitter Clone! This project aims to replicate the basic functiona
 To get started, clone or download the project from the GitHub repository.
 
 ```
-git clone https://github.com/your-username/twitter-clone.git
+https://github.com/shubham-tiwari171/function-up-tiwtter-clone/tree/main/twitter-clone
 ```
 
 Once you have the project on your machine, navigate to the project directory in your terminal and run the following command to install all the required dependencies:
